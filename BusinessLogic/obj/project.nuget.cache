@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "sKvVS2sYz/8=",
+  "success": false,
+  "projectFilePath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Nie można odnaleźć informacji o projekcie dla elementu „D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\Data\\Data.csproj”. Jeśli używasz programu Visual Studio, może to być spowodowane tym, że projekt został rozładowany lub nie jest częścią bieżącego rozwiązania, więc uruchom polecenie przywracania z poziomu wiersza polecenia. W innych przypadkach może to oznaczać, że plik projektu jest nieprawidłowy lub nie zawiera elementów docelowych wymaganych do przywrócenia.",
+      "libraryId": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
