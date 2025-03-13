@@ -5,5 +5,5 @@
 
 | Name Surname (initials) | GUID                                     |
 | ----------------------- | ---------------------------------------- |
-| Nastassia Herman           | `{FD9D086C-532F-4AAC-BB99-69D7798837D8}` |
-| Bartosz Dziuba            | `{44FBFCF5-4430-4964-878D-1867DC679E0D}` |
+| Nastassia Herman           | `{0d889bfea0f74fd49cf5585fabd14ec8}` |
+| Bartosz Dziuba             | `{62e3a739dbf346c096eb587aa8f4632e}` |
