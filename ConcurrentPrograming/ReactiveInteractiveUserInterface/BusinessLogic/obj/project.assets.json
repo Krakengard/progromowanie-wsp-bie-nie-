@@ -14,6 +14,19 @@
             "related": ".xml"
           }
         }
+      },
+      "DataLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataLayer.dll": {}
+        }
       }
     }
   },
@@ -47,32 +60,37 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "DataLayer/1.0.0": {
+      "type": "project",
+      "path": "../Data/Data.csproj",
+      "msbuildProject": "../Data/Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
+      "DataLayer >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Users\\barto\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
       "projectName": "TP.ConcurrentProgramming.BusinessLogic",
-      "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\BusinessLogic\\obj\\",
+      "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\barto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -88,8 +106,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
-              "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\Data\\Data.csproj"
+            "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj"
             }
           }
         }
@@ -134,16 +152,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Nie można odnaleźć informacji o projekcie dla elementu „D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\Data\\Data.csproj”. Jeśli używasz programu Visual Studio, może to być spowodowane tym, że projekt został rozładowany lub nie jest częścią bieżącego rozwiązania, więc uruchom polecenie przywracania z poziomu wiersza polecenia. W innych przypadkach może to oznaczać, że plik projektu jest nieprawidłowy lub nie zawiera elementów docelowych wymaganych do przywrócenia.",
-      "libraryId": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }
