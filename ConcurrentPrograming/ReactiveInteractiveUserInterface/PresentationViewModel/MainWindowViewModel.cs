@@ -25,6 +25,13 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
         public RelayCommand StartCommand { get; }
         public RelayCommand StopCommand { get; }
 
+        private int _ballCount;
+        private const int MaxBalls = 20;
+        private const int MinBalls = 1;
+        private IDisposable Observer = null;
+        private ModelAbstractApi ModelLayer;
+        private bool Disposed = false;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -41,17 +48,14 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
                 {
                     _isRunning = value;
                     OnPropertyChanged();
-                    // Важно: обновляем команды
+                    // aktualizuemy przycisk
                     StartCommand.RaiseCanExecuteChanged();
                     StopCommand.RaiseCanExecuteChanged();
                 }
             }
         }
 
-
-        private int _ballCount;
-        private const int MaxBalls = 20;
-        private const int MinBalls = 1;
+            
         public int BallCount
         {
             get => _ballCount;
@@ -61,21 +65,21 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
                     throw new ArgumentOutOfRangeException($"Number must be between {MinBalls} and {MaxBalls}");
 
                 _ballCount = value;
-               //OnPropertyChanged();
+               
             }
         }
 
         public MainWindowViewModel() : this(null)
-    {
+        {
             StartCommand = new RelayCommand(() => Start(BallCount), () => !IsRunning);
             StopCommand = new RelayCommand(() => Stop(), () => IsRunning);
         }
 
-    internal MainWindowViewModel(ModelAbstractApi modelLayerAPI)
-    {
-      ModelLayer = modelLayerAPI == null ? ModelAbstractApi.CreateModel() : modelLayerAPI;
-      Observer = ModelLayer.Subscribe<ModelIBall>(x => Balls.Add(x));
-    }
+        internal MainWindowViewModel(ModelAbstractApi modelLayerAPI)
+        {
+             ModelLayer = modelLayerAPI == null ? ModelAbstractApi.CreateModel() : modelLayerAPI;
+             Observer = ModelLayer.Subscribe<ModelIBall>(x => Balls.Add(x));
+        }
 
         #endregion ctor
 
@@ -83,10 +87,6 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
 
         public void Start(int _ballCount)
         {
-            /*if (Disposed)
-              throw new ObjectDisposedException(nameof(MainWindowViewModel));
-            ModelLayer.Start(numberOfBalls);
-            Observer.Dispose();*/
             if (Disposed)
             {
                 ModelLayer = ModelAbstractApi.CreateModel();
@@ -96,7 +96,7 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
             Balls.Clear();
             ModelLayer.Start(_ballCount);
             Observer = ModelLayer.Subscribe<ModelIBall>(x => Balls.Add(x));
-            IsRunning = true; // Автоматически активирует StopCommand
+            IsRunning = true; // dla StopCommand
         }
 
         public void Stop()
@@ -104,10 +104,10 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
             if (ModelLayer != null)
             {
                 ModelLayer.Dispose();
-                ModelLayer = null; // Важно обнулить ссылку
+                ModelLayer = null; 
             }
-            Balls.Clear(); // Очищаем коллекцию
-            Observer?.Dispose(); // Освобождаем наблюдателя
+            Balls.Clear(); 
+            Observer?.Dispose(); 
             IsRunning = false;
             Disposed = true;
         }
@@ -117,41 +117,32 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
 
     #region IDisposable
 
-    protected virtual void Dispose(bool disposing)
-    {
-      if (!Disposed)
-      {
-        if (disposing)
+        protected virtual void Dispose(bool disposing)
         {
-          Balls.Clear();
-          Observer.Dispose();
-          ModelLayer.Dispose();
-        }
+            if (!Disposed)
+        {
+                 if (disposing)
+                 {
+                    Balls.Clear();
+                    Observer.Dispose();
+                    ModelLayer.Dispose();
+                 }
 
         // TODO: free unmanaged resources (unmanaged objects) and override finalizer
         // TODO: set large fields to null
         Disposed = true;
-      }
-    }
+            }
+        }
 
-    public void Dispose()
-    {
-      if (Disposed)
-        throw new ObjectDisposedException(nameof(MainWindowViewModel));
-      Dispose(disposing: true);
-      GC.SuppressFinalize(this);
-    }
+        public void Dispose()
+        {
+        if (Disposed)
+            throw new ObjectDisposedException(nameof(MainWindowViewModel));
+        Dispose(disposing: true);
+        GC.SuppressFinalize(this);
+        }
 
     #endregion IDisposable
-
-    #region private
-
-    private IDisposable Observer = null;
-    private ModelAbstractApi ModelLayer;
-    private bool Disposed = false;
-
-    #endregion private
-
 
   }
 }

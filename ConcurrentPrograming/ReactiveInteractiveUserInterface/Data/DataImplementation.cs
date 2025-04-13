@@ -20,8 +20,8 @@ namespace TP.ConcurrentProgramming.Data
         #region ctor
         private const double TableWidth = 400;
         private const double TableHeight = 400;
-        private const double Friction = 0.95;
-        private const double MinVelocity = 0.1;
+        private const double Friction = 0.95;//tarcie
+        private const double MinVelocity = 0.1;//minimalna prędkość
         public DataImplementation()
         {
             MoveTimer = new Timer(Move, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(100));
@@ -37,7 +37,7 @@ namespace TP.ConcurrentProgramming.Data
                 if (disposing)
                 {
                     MoveTimer?.Dispose();
-                    BallsList.Clear(); // Очищаем внутренний список
+                    BallsList.Clear(); // usuwamy kule
                     Disposed = true;
                 }
                
@@ -72,8 +72,6 @@ namespace TP.ConcurrentProgramming.Data
 
         #region IDisposable
 
-        
-
         #endregion IDisposable
 
         #region private
@@ -87,27 +85,24 @@ namespace TP.ConcurrentProgramming.Data
 
         private void Move(object? x)
         {
-            /* foreach (Ball item in BallsList)
-               item.Move(new Vector((RandomGenerator.NextDouble() - 0.5) * 10, (RandomGenerator.NextDouble() - 0.5) * 10));
-           */
             foreach (Ball item in BallsList)
             {
-                // Применяем трение
+                // stopniowe zatrzymanie
                 var newVelocity = new Vector(
                     item.Velocity.x * Friction,
                     item.Velocity.y * Friction);
 
-                // Проверка минимальной скорости
+                // minimalna szybkosc
                 if (Math.Abs(newVelocity.x) < MinVelocity && Math.Abs(newVelocity.y) < MinVelocity)
                 {
                     newVelocity = new Vector(0, 0);
                 }
 
-                // Новая позиция с учетом скорости
+                // pozycja uwzględniająca szybkość
                 double newX = item.Position.x + newVelocity.x;
                 double newY = item.Position.y + newVelocity.y;
 
-                // Обработка столкновений с границами
+                // granicн
                 if (newX <= 0 || newX >= TableWidth - item.Diameter)
                 {
                     newVelocity = new Vector(-newVelocity.x, newVelocity.y);
@@ -122,7 +117,6 @@ namespace TP.ConcurrentProgramming.Data
                 item.Velocity = newVelocity;
                 item.Move(new Vector(newX - item.Position.x, newY - item.Position.y));
             }
-
 
         }
 
@@ -147,11 +141,6 @@ namespace TP.ConcurrentProgramming.Data
         {
             returnInstanceDisposed(Disposed);
         }
-
-
-
-
-
 
         #endregion TestingInfrastructure
     }

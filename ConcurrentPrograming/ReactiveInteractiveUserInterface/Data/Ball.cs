@@ -36,21 +36,21 @@ namespace TP.ConcurrentProgramming.Data
 
              public double Diameter { get; } = 20;
              private void RaiseNewPositionChangeNotification()
-         {
+             {
            NewPositionNotification?.Invoke(this, Position);
-         }
+             }
 
              internal void Move(Vector delta)
-         {
+             {
                  /*Position = new Vector(Position.x + delta.x, Position.y + delta.y);
                  RaiseNewPositionChangeNotification();*/
-        Position = new Vector(
-          Math.Clamp(Position.x + delta.x, 0, 400 - Diameter),
-          Math.Clamp(Position.y + delta.y, 0, 400 - Diameter)
-      );
-        RaiseNewPositionChangeNotification();
+                Position = new Vector(
+                Math.Clamp(Position.x + delta.x, 0, 400 - Diameter),
+                Math.Clamp(Position.y + delta.y, 0, 400 - Diameter)
+                );
+                RaiseNewPositionChangeNotification();
+             }
+        public IVector GetPosition() => Position;
+        #endregion private
     }
-    public IVector GetPosition() => Position;
-    #endregion private
-}
 }
