@@ -5,28 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:TP.ConcurrentProgramming.Presentation.ViewModel;assembly=TP.ConcurrentProgramming.PresentationViewModel"
         mc:Ignorable="d"
-        Title="Presentation layer targeting reactive behaviour" Height="auto" Width="auto">
+        Title="Presentation layer targeting reactive behaviour" Height="550" Width="450">
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
-    <Border BorderThickness="4" BorderBrush="Green" Height="420" Width="400">
-        <ItemsControl ItemsSource="{Binding Balls}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Canvas />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Ellipse Width= "{Binding Diameter}" Height="{Binding Diameter}" Fill="Blue" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemContainerStyle>
-                <Style TargetType="ContentPresenter">
-                    <Setter Property="Canvas.Top" Value="{Binding Top}" />
-                    <Setter Property="Canvas.Left" Value="{Binding Left}" />
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-        </ItemsControl>
-    </Border>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель управления -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <TextBlock Text="Number of balls:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox Text="{Binding BallCount, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="50" Margin="0,0,10,0"/>
+            <Button Content="Start" Command="{Binding StartCommand}" 
+                    MinWidth="80" Margin="0,0,5,0" Padding="10,3"/>
+            <Button Content="Stop" Command="{Binding StopCommand}" 
+                    MinWidth="80" Padding="10,3"/>
+        </StackPanel>
+
+        <!-- Игровое поле -->
+        <Border Grid.Row="1" BorderThickness="4" BorderBrush="Green" 
+                 Height="410" Width="410"
+                Margin="10" CornerRadius="5" Background="#FFE8F5E9">
+            <ItemsControl ItemsSource="{Binding Balls}" Margin="0,0,0,0">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Ellipse Width="{Binding Diameter}" 
+                                Height="{Binding Diameter}" 
+                                Fill="Blue"
+                                Stroke="DarkBlue"
+                                StrokeThickness="1.5">
+                            <Ellipse.Effect>
+                                <DropShadowEffect ShadowDepth="2" 
+                                                Color="DarkBlue"
+                                                Opacity="0.6"
+                                                BlurRadius="5"/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Canvas.Top" Value="{Binding Top}"/>
+                        <Setter Property="Canvas.Left" Value="{Binding Left}"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+        </Border>
+    </Grid>
 </Window>

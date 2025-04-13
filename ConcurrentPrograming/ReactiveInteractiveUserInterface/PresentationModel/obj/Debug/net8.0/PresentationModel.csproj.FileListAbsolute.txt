@@ -33,3 +33,21 @@ C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\Re
 C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.PresentationModel.dll
 C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.pdb
 C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.PresentationModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.deps.json
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\bin\Debug\net8.0\DataLayer.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\bin\Debug\net8.0\DataLayer.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\PresentationModel.csproj.AssemblyReference.cache
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\PresentationModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\PresentationModel.AssemblyInfoInputs.cache
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\PresentationModel.AssemblyInfo.cs
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\PresentationModel.csproj.CoreCompileInputs.cache
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\PresentationModel.sourcelink.json
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\Presenta.2BDC8EB4.Up2Date
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.PresentationModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModel\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.PresentationModel.dll

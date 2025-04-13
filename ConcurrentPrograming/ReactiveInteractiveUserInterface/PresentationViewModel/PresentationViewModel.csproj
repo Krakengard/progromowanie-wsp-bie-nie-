@@ -18,4 +18,9 @@
   <ItemGroup>
     <ProjectReference Include="..\PresentationModel\PresentationModel.csproj" />
   </ItemGroup>
+	<ItemGroup>
+		<Reference Include="WindowsBase" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+	</ItemGroup>
 </Project>

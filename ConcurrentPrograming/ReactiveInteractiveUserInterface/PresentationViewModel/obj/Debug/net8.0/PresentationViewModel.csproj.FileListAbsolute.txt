@@ -37,3 +37,23 @@ C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\Re
 C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.PresentationViewModel.dll
 C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.pdb
 C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.PresentationViewModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.deps.json
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\DataLayer.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\DataLayer.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.csproj.AssemblyReference.cache
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.AssemblyInfoInputs.cache
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.AssemblyInfo.cs
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.csproj.CoreCompileInputs.cache
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.sourcelink.json
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\Presenta.E317AD4C.Up2Date
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.PresentationViewModel.dll
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.pdb
+D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.PresentationViewModel.dll

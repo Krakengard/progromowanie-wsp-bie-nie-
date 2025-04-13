@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "GGJEfRhQTWI=",
+  "dgSpecHash": "V9CF9qLUrVs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj",
+  "projectFilePath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\barto\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\barto\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512"
   ],
   "logs": []
 }

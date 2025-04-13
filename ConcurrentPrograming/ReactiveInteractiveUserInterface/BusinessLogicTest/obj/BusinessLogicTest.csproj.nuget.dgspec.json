@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj": {}
+    "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj": {
+    "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj",
+        "projectUniqueName": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj",
         "projectName": "BusinessLogicTest",
-        "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj",
-        "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\obj\\",
+        "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\BusinessLogicTest.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogicTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\barto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj"
+              "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj"
               }
             }
           }
@@ -98,20 +98,20 @@
         }
       }
     },
-    "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj": {
+    "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "TP.ConcurrentProgramming.BusinessLogic",
-        "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\obj\\",
+        "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\barto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -127,8 +127,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj"
+              "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
+                "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj"
               }
             }
           }
@@ -174,20 +174,20 @@
         }
       }
     },
-    "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
+    "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
+        "projectUniqueName": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\obj\\",
+        "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\barto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
