@@ -20,15 +20,17 @@ using ModelIBall = TP.ConcurrentProgramming.Presentation.Model.IBall;
 
 namespace TP.ConcurrentProgramming.Presentation.ViewModel
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase, IDisposable
     {
         #region ctor
          public RelayCommand StartCommand { get; }
          public RelayCommand StopCommand { get; }
+        public RelayCommand IncreaseBallsCommand { get; }
+        public RelayCommand DecreaseBallsCommand { get; }
 
-         private int _ballCount;
-         private const int MaxBalls = 20;
-         private const int MinBalls = 1;
+        private int _ballCount;
+         private const int MaxBalls = 10;
+         private const int MinBalls = 0;
          private IDisposable Observer = null;
          private ModelAbstractApi ModelLayer;
          private bool Disposed = false;
@@ -60,15 +62,17 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
          public int BallCount
          {
              get => _ballCount;
-             set
-             {
-                 if (value < MinBalls || value > MaxBalls)
-                     throw new ArgumentOutOfRangeException($"Number must be between {MinBalls} and {MaxBalls}");
+            set
+            {
+                if (value < MinBalls || value > MaxBalls)
+                    return;
 
-                 _ballCount = value;
-
-             }
-         }
+                _ballCount = value;
+                RaisePropertyChanged();
+                IncreaseBallsCommand.RaiseCanExecuteChanged();
+                DecreaseBallsCommand.RaiseCanExecuteChanged();
+            }
+        }
 
          public MainWindowViewModel() : this(null)
          {
@@ -81,13 +85,19 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
          {
               ModelLayer = modelLayerAPI == null ? ModelAbstractApi.CreateModel() : modelLayerAPI;
               Observer = ModelLayer.Subscribe<ModelIBall>(x => Balls.Add(x));
-         }
 
-         #endregion ctor
+            StartCommand = new RelayCommand(() => Start(BallCount), () => !IsRunning);
+            StopCommand = new RelayCommand(() => Stop(), () => IsRunning);
+            IncreaseBallsCommand = new RelayCommand(() => BallCount++, () => BallCount < MaxBalls);
+            DecreaseBallsCommand = new RelayCommand(() => BallCount--, () => BallCount > MinBalls);
 
-         #region public API
+        }
 
-         public void Start(int _ballCount)
+        #endregion ctor
+
+        #region public API
+
+        public void Start(int _ballCount)
          {
              if (Disposed)
              {
@@ -115,11 +125,14 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel
          }
          public ObservableCollection<ModelIBall> Balls { get; } = new ObservableCollection<ModelIBall>();
 
-     #endregion public API
 
-     #region IDisposable
 
-         protected virtual void Dispose(bool disposing)
+
+        #endregion public API
+
+        #region IDisposable
+
+        protected virtual void Dispose(bool disposing)
          {
              if (!Disposed)
          {

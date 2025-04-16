@@ -24,7 +24,7 @@ namespace TP.ConcurrentProgramming.Data
          private const double MinVelocity = 0.1;//minimalna prędkość
          public DataImplementation()
          {
-             MoveTimer = new Timer(Move, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(100));
+             MoveTimer = new Timer(Move, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(16));
          }
 
          #endregion ctor
@@ -58,8 +58,9 @@ namespace TP.ConcurrentProgramming.Data
                   throw new ObjectDisposedException(nameof(DataImplementation));
               if (upperLayerHandler == null)
                   throw new ArgumentNullException(nameof(upperLayerHandler));
-              Random random = new Random();
-            const double InitialSpeed = 50.0;
+            Random random = new Random();
+            //Prędkość początkowa
+            const double InitialSpeed = 30.0;
             for (int i = 0; i < numberOfBalls; i++)
               {
                   Vector startingPosition = new(random.Next(100, 400 - 100), random.Next(100, 400 - 100));

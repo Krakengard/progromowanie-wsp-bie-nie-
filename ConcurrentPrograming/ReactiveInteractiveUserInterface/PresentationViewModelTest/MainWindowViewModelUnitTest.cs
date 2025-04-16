@@ -35,7 +35,7 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel.Test
         Assert.IsNotNull(viewModel.Balls);
         Assert.AreEqual<int>(0, nullModelFixture.Disposed);
         Assert.AreEqual<int>(numberOfBalls, nullModelFixture.Started);
-        Assert.AreEqual<int>(1, nullModelFixture.Subscribed);
+        Assert.AreEqual<int>(2, nullModelFixture.Subscribed);
       }
       Assert.AreEqual<int>(1, nullModelFixture.Disposed);
     }
@@ -55,10 +55,53 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel.Test
       Assert.IsTrue(modelSimulator.Disposed);
       Assert.AreEqual<int>(0, viewModel.Balls.Count);
     }
+        [TestMethod]
+        public void IncreaseAndDecreaseBallsCommandTest()
+        {
+            var vm = new MainWindowViewModel(new DummyModel());
+            vm.BallCount = 1;
 
-    #region testing infrastructure
+            Assert.AreEqual(1, vm.BallCount);
+            Assert.IsTrue(vm.IncreaseBallsCommand.CanExecute(null));
+            Assert.IsTrue(vm.DecreaseBallsCommand.CanExecute(null));
 
-    private class ModelNullFixture : ModelAbstractApi
+            vm.IncreaseBallsCommand.Execute(null);
+            Assert.AreEqual(2, vm.BallCount);
+
+            vm.DecreaseBallsCommand.Execute(null);
+            Assert.AreEqual(1, vm.BallCount);
+        }
+
+        [TestMethod]
+        public void MinAndMaxBallLimitTest()
+        {
+            var vm = new MainWindowViewModel(new DummyModel());
+
+            vm.BallCount = 0;
+            Assert.IsFalse(vm.DecreaseBallsCommand.CanExecute(null));
+
+            vm.BallCount = 10;
+            Assert.IsFalse(vm.IncreaseBallsCommand.CanExecute(null));
+        }
+
+        [TestMethod]
+        public void StartStopCommandsUpdateIsRunning()
+        {
+            var vm = new MainWindowViewModel(new DummyModel());
+            vm.BallCount = 5;
+
+            Assert.IsTrue(vm.StartCommand.CanExecute(null));
+            vm.StartCommand.Execute(null);
+            Assert.IsTrue(vm.IsRunning);
+            Assert.IsTrue(vm.StopCommand.CanExecute(null));
+
+            vm.StopCommand.Execute(null);
+            Assert.IsFalse(vm.IsRunning);
+        }
+
+        #region testing infrastructure
+
+        private class ModelNullFixture : ModelAbstractApi
     {
       #region Test
 
@@ -174,6 +217,30 @@ namespace TP.ConcurrentProgramming.Presentation.ViewModel.Test
       #endregion private
     }
 
-    #endregion testing infrastructure
-  }
+        private class DummyModel : ModelAbstractApi
+        {
+            public override void Dispose()
+            {
+                // brak dzia³añ
+            }
+
+            public override void Start(int numberOfBalls)
+            {
+                // brak dzia³añ
+            }
+
+            public override IDisposable Subscribe(IObserver<ModelIBall> observer)
+            {
+                return new DummyDisposable();
+            }
+
+            private class DummyDisposable : IDisposable
+            {
+                public void Dispose() { }
+            }
+        }
+
+
+        #endregion testing infrastructure
+    }
 }

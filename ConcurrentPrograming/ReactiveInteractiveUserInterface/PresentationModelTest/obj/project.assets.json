@@ -1793,23 +1793,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Users\\barto\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModelTest\\PresentationModelTest.csproj",
+      "projectUniqueName": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModelTest\\PresentationModelTest.csproj",
       "projectName": "PresentationModelTest",
-      "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModelTest\\PresentationModelTest.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModelTest\\obj\\",
+      "projectPath": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModelTest\\PresentationModelTest.csproj",
+      "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModelTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\barto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1825,8 +1825,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj": {
-              "projectPath": "D:\\EEEEEW GROSS\\2 kurs pl\\4 sem\\proga\\rep\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj"
+            "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj": {
+              "projectPath": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj"
             }
           }
         }
