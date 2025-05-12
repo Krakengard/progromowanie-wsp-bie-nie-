@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TlmWcgG9M/I=",
+  "dgSpecHash": "jvZ4dcdObEE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\DataTest\\DataTest.csproj",
+  "projectFilePath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\DataTest\\DataTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barto\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\barto\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",

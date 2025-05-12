@@ -12,9 +12,12 @@ namespace TP.ConcurrentProgramming.Data
 {
     internal class Ball : IBall
     {
-         #region ctor
+        #region ctor
 
-         internal Ball(Vector initialPosition, Vector initialVelocity)
+        public double Mass { get; } = 1.0; 
+
+
+        internal Ball(Vector initialPosition, Vector initialVelocity)
          {
            Position = initialPosition;
            Velocity = initialVelocity;

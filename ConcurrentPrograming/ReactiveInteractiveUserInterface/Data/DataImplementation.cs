@@ -93,7 +93,29 @@ namespace TP.ConcurrentProgramming.Data
 
          private void Move(object? x)
          {
-             foreach (Ball item in BallsList)
+            lock (BallsList) 
+            {
+                for (int i = 0; i < BallsList.Count; i++)
+                {
+                    Ball ballA = BallsList[i];
+                    for (int j = i + 1; j < BallsList.Count; j++)
+                    {
+                        Ball ballB = BallsList[j];
+
+                        Vector delta = new Vector(ballB.Position.x - ballA.Position.x, ballB.Position.y - ballA.Position.y);
+                        double distance = Math.Sqrt(delta.x * delta.x + delta.y * delta.y);
+                        double minDist = (ballA.Diameter + ballB.Diameter) / 2.0;
+
+                        if (distance < minDist && distance > 0.0)
+                        {
+                            
+                            ResolveCollision(ballA, ballB, delta, distance);
+                        }
+                    }
+                }
+            }
+
+            foreach (Ball item in BallsList)
              {
                  // stopniowe zatrzymanie
                  var newVelocity = new Vector(
@@ -127,12 +149,37 @@ namespace TP.ConcurrentProgramming.Data
              }
 
          }
+        private void ResolveCollision(Ball a, Ball b, Vector delta, double distance)
+        {
+            double nx = delta.x / distance;
+            double ny = delta.y / distance;
 
-         #endregion private
+            double tx = -ny;
+            double ty = nx;
 
-         #region TestingInfrastructure
+            double vA_n = a.Velocity.x * nx + a.Velocity.y * ny;
+            double vB_n = b.Velocity.x * nx + b.Velocity.y * ny;
 
-         [Conditional("DEBUG")]
+            double vA_t = a.Velocity.x * tx + a.Velocity.y * ty;
+            double vB_t = b.Velocity.x * tx + b.Velocity.y * ty;
+
+            double m1 = a.Mass;
+            double m2 = b.Mass;
+
+            double vA_n_prime = (vA_n * (m1 - m2) + 2 * m2 * vB_n) / (m1 + m2);
+            double vB_n_prime = (vB_n * (m2 - m1) + 2 * m1 * vA_n) / (m1 + m2);
+
+            // Now new velocities
+            a.Velocity = new Vector(vA_n_prime * nx + vA_t * tx, vA_n_prime * ny + vA_t * ty);
+            b.Velocity = new Vector(vB_n_prime * nx + vB_t * tx, vB_n_prime * ny + vB_t * ty);
+        }
+
+
+        #endregion private
+
+        #region TestingInfrastructure
+
+        [Conditional("DEBUG")]
          internal void CheckBallsList(Action<IEnumerable<IBall>> returnBallsList)
          {
              returnBallsList(BallsList);
