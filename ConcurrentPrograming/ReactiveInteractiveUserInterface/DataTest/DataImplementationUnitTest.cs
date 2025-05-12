@@ -65,5 +65,31 @@ namespace TP.ConcurrentProgramming.Data.Test
         newInstance.CheckNumberOfBalls(x => Assert.AreEqual<int>(10, x));
       }
     }
-  }
+
+        [TestMethod]
+        public void BallShouldBounceOffWallTest()
+        {
+            
+            Vector startPosition = new Vector(395, 200); 
+            Vector startVelocity = new Vector(10, 0);    
+
+            Ball testBall = new Ball(startPosition, startVelocity);
+
+            DataImplementation testInstance = new DataImplementation();
+           
+            var ballsField = typeof(DataImplementation)
+                .GetField("BallsList", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var list = (List<Ball>)ballsField.GetValue(testInstance);
+            list.Add(testBall);
+
+            
+            var moveMethod = typeof(DataImplementation)
+                .GetMethod("Move", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            moveMethod.Invoke(testInstance, new object[] { null });
+
+            
+            Assert.IsTrue(testBall.Velocity.x < 0, "Kula nie odbiła się od prawej ściany");
+        }
+
+    }
 }

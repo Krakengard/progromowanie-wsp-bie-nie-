@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {}
+    "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
+    "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\Data\\obj\\",
         "projectStyle": "PackageReference",

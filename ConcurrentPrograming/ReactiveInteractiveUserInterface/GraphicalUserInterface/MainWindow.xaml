@@ -33,6 +33,7 @@
 
 
         <!-- Pole gry -->
+
         <Border Grid.Row="1" BorderThickness="4" BorderBrush="Green" 
                  Height="410" Width="410"
                 Margin="10" CornerRadius="5" Background="#FFE8F5E9">
