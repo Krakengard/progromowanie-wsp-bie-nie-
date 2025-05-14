@@ -31,13 +31,18 @@ namespace TP.ConcurrentProgramming.BusinessLogic
 
     public abstract void Dispose();
 
-    #endregion IDisposable
+        internal void CheckObjectDisposed(Action<object> value)
+        {
+            throw new NotImplementedException();
+        }
 
-    #endregion Layer API
+        #endregion IDisposable
 
-    #region private
+        #endregion Layer API
 
-    private static Lazy<BusinessLogicAbstractAPI> modelInstance = new Lazy<BusinessLogicAbstractAPI>(() => new BusinessLogicImplementation());
+        #region private
+
+        private static Lazy<BusinessLogicAbstractAPI> modelInstance = new Lazy<BusinessLogicAbstractAPI>(() => new BusinessLogicImplementation());
 
     #endregion private
   }

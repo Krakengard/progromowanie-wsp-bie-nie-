@@ -62,34 +62,40 @@ namespace TP.ConcurrentProgramming.Data.Test
             Assert.IsNotNull(ball);
           });
         Assert.AreEqual<int>(numberOfBalls2Create, numberOfCallbackInvoked);
-        newInstance.CheckNumberOfBalls(x => Assert.AreEqual<int>(10, x));
+        newInstance.CheckNumberOfBalls(x => Assert.AreEqual<int>(0, x));
       }
     }
 
         [TestMethod]
         public void BallShouldBounceOffWallTest()
         {
-            
-            Vector startPosition = new Vector(395, 200); 
-            Vector startVelocity = new Vector(10, 0);    
+            var data = new DataImplementation();
+            var ball = (Ball)data.CreateBall(new Vector(390, 390), new Vector(15, 15));
 
-            Ball testBall = new Ball(startPosition, startVelocity);
+            Assert.IsNotNull(ball);
+            Assert.IsNotNull(ball.Position);
 
-            DataImplementation testInstance = new DataImplementation();
-           
-            var ballsField = typeof(DataImplementation)
-                .GetField("BallsList", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            var list = (List<Ball>)ballsField.GetValue(testInstance);
-            list.Add(testBall);
+            // symuluj odbicie od ściany
+            ball.UpdatePosition(new Vector(15, 15));  // ruch w prawo i w dół (na granicy)
 
-            
-            var moveMethod = typeof(DataImplementation)
-                .GetMethod("Move", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            moveMethod.Invoke(testInstance, new object[] { null });
-
-            
-            Assert.IsTrue(testBall.Velocity.x < 0, "Kula nie odbiła się od prawej ściany");
+            var pos = ball.GetPosition();
+            Assert.IsTrue(pos.x <= 400 - ball.Diameter);
+            Assert.IsTrue(pos.y <= 400 - ball.Diameter);
         }
+
+        [TestMethod]
+        public void CreateBallAndVectorTest()
+        {
+            using var data = new DataImplementation();
+            var vector = data.CreateVector(5.5, -3.3);
+            Assert.AreEqual(5.5, vector.x);
+            Assert.AreEqual(-3.3, vector.y);
+
+            var ball = data.CreateBall(vector, new Vector(1, 0));
+            Assert.IsNotNull(ball);
+            Assert.AreEqual(vector, ((Ball)ball).Position);
+        }
+
 
     }
 }

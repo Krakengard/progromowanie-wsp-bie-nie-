@@ -47,13 +47,29 @@ namespace TP.ConcurrentProgramming.Data
 
         public override void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler)
         {
-            if (Disposed)
-                throw new ObjectDisposedException(nameof(DataImplementation));
-            if (upperLayerHandler == null)
-                throw new ArgumentNullException(nameof(upperLayerHandler));
+            Random rand = new Random();
+            double margin = 20;
+            double width = 400;
+            double height = 400;
 
-            
+            for (int i = 0; i < numberOfBalls; i++)
+            {
+                double x = rand.NextDouble() * (width - 2 * margin) + margin;
+                double y = rand.NextDouble() * (height - 2 * margin) + margin;
+
+                double vx = rand.NextDouble() * 2 - 1; 
+                double vy = rand.NextDouble() * 2 - 1;
+
+                var position = CreateVector(x, y);
+                var velocity = CreateVector(vx, vy);
+
+                var ball = CreateBall(position, velocity);
+                balls.Add(ball);
+                upperLayerHandler(position, ball);
+            }
         }
+
+
 
         public override IBall CreateBall(IVector position, IVector velocity)
         {
@@ -75,6 +91,8 @@ namespace TP.ConcurrentProgramming.Data
 
         private bool Disposed = false;
         private List<Ball> BallsList = [];
+        private readonly List<IBall> balls = new();
+
 
         #endregion private
 

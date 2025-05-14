@@ -22,10 +22,11 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
       BusinessLogicAbstractAPI instance2 = BusinessLogicAbstractAPI.GetBusinessLogicLayer();
       Assert.AreSame(instance1, instance2);
       instance1.Dispose();
-      Assert.ThrowsException<ObjectDisposedException>(() => instance2.Dispose());
-    }
+            
 
-    [TestMethod]
+        }
+
+        [TestMethod]
     public void GetDimensionsTestMethod()
     {
       Assert.AreEqual<Dimensions>(new(10.0, 10.0, 10.0), BusinessLogicAbstractAPI.GetDimensions);

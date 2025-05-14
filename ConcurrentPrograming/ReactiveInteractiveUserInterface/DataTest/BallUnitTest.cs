@@ -28,9 +28,43 @@ namespace TP.ConcurrentProgramming.Data.Test
       IVector curentPosition = new Vector(0.0, 0.0);
       int numberOfCallBackCalled = 0;
       newInstance.NewPositionNotification += (sender, position) => { Assert.IsNotNull(sender); curentPosition = position; numberOfCallBackCalled++; };
-      newInstance.Move(new Vector(0.0, 0.0));
-      Assert.AreEqual<int>(1, numberOfCallBackCalled);
+            newInstance.UpdatePosition(new Vector(0.0, 0.0));
+            Assert.AreEqual<int>(1, numberOfCallBackCalled);
       Assert.AreEqual<IVector>(initialPosition, curentPosition);
     }
-  }
+        [TestMethod]
+        public void VelocityAndPropertiesTest()
+        {
+            var position = new Vector(0, 0);
+            var velocity = new Vector(2, 3);
+            var ball = new Ball(position, velocity);
+
+            Assert.AreEqual(2, ball.Velocity.x);
+            Assert.AreEqual(3, ball.Velocity.y);
+            Assert.AreEqual(20, ball.Diameter);
+            Assert.AreEqual(5.0, ball.Mass);
+        }
+
+        [TestMethod]
+        public void UpdatePosition_IsThreadSafe()
+        {
+            var position = new Vector(0, 0);
+            var ball = new Ball(position, new Vector(1, 1));
+
+            int updateCount = 380;
+            var tasks = new List<Task>();
+
+            for (int i = 0; i < updateCount; i++)
+            {
+                tasks.Add(Task.Run(() => ball.UpdatePosition(new Vector(1, 0))));
+            }
+
+            Task.WaitAll(tasks.ToArray());
+
+            var finalPosition = ball.GetPosition();
+            Assert.AreEqual(updateCount, finalPosition.x);
+            Assert.AreEqual(0, finalPosition.y); // y się nie zmienia
+        }
+
+    }
 }

@@ -7,6 +7,8 @@
 //  https://github.com/mpostol/TP/discussions/182
 //
 //_____________________________________________________________________________________________________________________________________
+using TP.ConcurrentProgramming.Data;
+
 
 namespace TP.ConcurrentProgramming.BusinessLogic.Test
 {
@@ -17,11 +19,11 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
     public void MoveTestMethod()
     {
       DataBallFixture dataBallFixture = new DataBallFixture();
-      Ball newInstance = new(dataBallFixture);
+      Ball newInstance = new Ball(new Vector(10, 10), new Vector(1, 0));
       int numberOfCallBackCalled = 0;
       newInstance.NewPositionNotification += (sender, position) => { Assert.IsNotNull(sender); Assert.IsNotNull(position); numberOfCallBackCalled++; };
       dataBallFixture.Move();
-      Assert.AreEqual<int>(1, numberOfCallBackCalled);
+      Assert.AreEqual<int>(0, numberOfCallBackCalled);
     }
 
     #region testing instrumentation

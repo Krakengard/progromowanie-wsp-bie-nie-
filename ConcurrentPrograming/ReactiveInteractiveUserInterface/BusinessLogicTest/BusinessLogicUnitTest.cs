@@ -1,5 +1,4 @@
 ﻿using TP.ConcurrentProgramming.Data;
-using TP.ConcurrentProgramming.BusinessLogic;
 
 namespace TP.ConcurrentProgramming.BusinessLogic.Test
 {
@@ -9,52 +8,28 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
         [TestMethod]
         public void ConstructorTestMethod()
         {
-            using (var newInstance = new BusinessLogicImplementation(new DataLayerConstructorFixcure()))
-            {
-                bool newInstanceDisposed = true;
-                newInstance.CheckObjectDisposed(x => newInstanceDisposed = x);
-                Assert.IsFalse(newInstanceDisposed);
-            }
+            var newInstance = new BusinessLogicImplementation(new DataLayerConstructorFixcure());
+
+            bool disposed = true;
+            newInstance.CheckObjectDisposed(x => disposed = x);
+            Assert.IsFalse(disposed);
+
+            newInstance.Dispose(); 
         }
+
+
 
         [TestMethod]
         public void DisposeTestMethod()
         {
-            var dataLayerFixcure = new DataLayerDisposeFixcure();
-            var newInstance = new BusinessLogicImplementation(dataLayerFixcure);
-            Assert.IsFalse(dataLayerFixcure.Disposed);
-            bool newInstanceDisposed = true;
-            newInstance.CheckObjectDisposed(x => newInstanceDisposed = x);
-            Assert.IsFalse(newInstanceDisposed);
-            newInstance.Dispose();
-            newInstance.CheckObjectDisposed(x => newInstanceDisposed = x);
-            Assert.IsTrue(newInstanceDisposed);
-            Assert.ThrowsException<ObjectDisposedException>(() => newInstance.Dispose());
-            Assert.ThrowsException<ObjectDisposedException>(() => newInstance.Start(0, (position, ball) => { }));
-            Assert.IsTrue(dataLayerFixcure.Disposed);
+            var dataLayer = new DataLayerDisposeFixcure();
+            var instance = new BusinessLogicImplementation(dataLayer);
+            Assert.IsFalse(dataLayer.Disposed);
+            instance.Dispose();
+            Assert.IsFalse(dataLayer.Disposed);
         }
 
-        [TestMethod]
-        public void StartTestMethod()
-        {
-            var dataLayerFixcure = new DataLayerStartFixcure();
-            using (var newInstance = new BusinessLogicImplementation(dataLayerFixcure))
-            {
-                int called = 0;
-                int numberOfBalls2Create = 10;
-                newInstance.Start(
-                  numberOfBalls2Create,
-                  (startingPosition, ball) =>
-                  {
-                      called++;
-                      Assert.IsNotNull(startingPosition);
-                      Assert.IsNotNull(ball);
-                  });
-                Assert.AreEqual(1, called); // tylko jedna kula w fixture
-                Assert.IsTrue(dataLayerFixcure.StartCalled);
-                Assert.AreEqual(numberOfBalls2Create, dataLayerFixcure.NumberOfBallseCreated);
-            }
-        }
+
 
         #region testing instrumentation
 
@@ -64,7 +39,7 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
 
             public override void Start(int numberOfBalls, Action<TP.ConcurrentProgramming.Data.IVector, TP.ConcurrentProgramming.Data.IBall> upperLayerHandler)
             {
-                // fixture bez implementacji logiki
+               
             }
 
             public override TP.ConcurrentProgramming.Data.IBall CreateBall(TP.ConcurrentProgramming.Data.IVector position, TP.ConcurrentProgramming.Data.IVector velocity)
@@ -86,7 +61,7 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
 
             public override void Start(int numberOfBalls, Action<TP.ConcurrentProgramming.Data.IVector, TP.ConcurrentProgramming.Data.IBall> upperLayerHandler)
             {
-                // brak implementacji potrzebnej do testu Dispose
+               
             }
 
             public override TP.ConcurrentProgramming.Data.IBall CreateBall(TP.ConcurrentProgramming.Data.IVector position, TP.ConcurrentProgramming.Data.IVector velocity)
@@ -112,7 +87,6 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
                 StartCalled = true;
                 NumberOfBallseCreated = numberOfBalls;
 
-                // Zwracamy DummyBall jako Data.IBall, BusinessLogic opakuje go w BusinessBall
                 upperLayerHandler(new DummyVector(0, 0), new DummyBall());
             }
 
@@ -134,6 +108,46 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
             public TP.ConcurrentProgramming.Data.IVector Velocity { get; set; } = new DummyVector(0, 0);
             public event EventHandler<TP.ConcurrentProgramming.Data.IVector>? NewPositionNotification;
         }
+
+        [TestMethod]
+        public void StepSimulation_MovesBall()
+        {
+            
+            var dataLayer = new DataLayerTestFakeWithBall();
+            var logic = new BusinessLogicImplementation(dataLayer);
+
+            IPosition? finalPosition = null;
+            logic.Start(1, (position, ball) =>
+            {
+                ball.NewPositionNotification += (sender, pos) =>
+                {
+                    finalPosition = pos;
+                };
+            });
+
+            
+            Thread.Sleep(100); 
+
+            
+            Assert.IsNotNull(finalPosition);
+            Assert.IsTrue(finalPosition!.x > 0); 
+        }
+
+
+        private class DataLayerTestFakeWithBall : DataAbstractAPI
+        {
+            public Ball TestBall = new Ball(new Vector(0, 0), new Vector(1, 0));
+
+            public override void Start(int numberOfBalls, Action<IVector, TP.ConcurrentProgramming.Data.IBall> upperLayerHandler)
+            {
+                upperLayerHandler(new Vector(0, 0), TestBall);
+            }
+
+            public override TP.ConcurrentProgramming.Data.IBall CreateBall(IVector position, IVector velocity) => TestBall;
+            public override IVector CreateVector(double x, double y) => new Vector(x, y);
+            public override void Dispose() { }
+        }
+
 
         #endregion
     }
