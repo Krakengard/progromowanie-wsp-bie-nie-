@@ -11,11 +11,8 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Numerics;
 using System.Threading;
 using TP.ConcurrentProgramming.Data;
-using DataBall = TP.ConcurrentProgramming.Data.Ball;
-using DataVector = TP.ConcurrentProgramming.Data.Vector;
 
 namespace TP.ConcurrentProgramming.BusinessLogic
 {
@@ -31,12 +28,11 @@ namespace TP.ConcurrentProgramming.BusinessLogic
         private void InitializeSimulation()
         {
             random = new Random();
-            balls = new List<DataBall>();
+            balls = new List<ISimulationBall>();
+            dataLayer = DataAbstractAPI.GetDataLayer();
         }
 
         #endregion ctor
-
-        
 
         #region BusinessLogicAbstractAPI
 
@@ -44,8 +40,8 @@ namespace TP.ConcurrentProgramming.BusinessLogic
         {
             if (Disposed)
                 throw new ObjectDisposedException(nameof(BusinessLogicImplementation));
-            simulationTimer?.Dispose();
             balls.Clear();
+            dataLayer.Dispose();
             Disposed = true;
         }
 
@@ -61,15 +57,48 @@ namespace TP.ConcurrentProgramming.BusinessLogic
                 double x = random.Next(100, (int)(TableWidth - 100));
                 double y = random.Next(100, (int)(TableHeight - 100));
                 double angle = random.NextDouble() * 2 * Math.PI;
-                DataVector velocity = new(Math.Cos(angle) * InitialSpeed, Math.Sin(angle) * InitialSpeed);
-                DataVector position = new(x, y);
 
-                DataBall ball = new(position, velocity);
-                balls.Add(ball);
-                upperLayerHandler(new Position(position.x, position.y), new BusinessBall(ball));
+                var velocity = dataLayer.CreateVector(Math.Cos(angle) * InitialSpeed, Math.Sin(angle) * InitialSpeed);
+                var position = dataLayer.CreateVector(x, y);
+                var simBall = (TP.ConcurrentProgramming.Data.ISimulationBall)dataLayer.CreateBall(position, velocity);
+                balls.Add(simBall);
+                upperLayerHandler(new Position(position.x, position.y), new BusinessBall(simBall));
+
             }
 
-            simulationTimer = new Timer(StepSimulation, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(16));
+            foreach (var ball in balls)
+            {
+                var velocity = ball.Velocity;
+
+                if (Math.Abs(velocity.x) < MinVelocity && Math.Abs(velocity.y) < MinVelocity)
+                    velocity = new Vector(0, 0);
+
+                var position = ball.Position;
+                double newX = position.x + velocity.x;
+                double newY = position.y + velocity.y;
+
+                if (newX <= 0 || newX >= TableWidth - ball.Diameter)
+                    velocity = new Vector(-velocity.x, velocity.y);
+
+                if (newY <= 0 || newY >= TableHeight - ball.Diameter)
+                    velocity = new Vector(velocity.x, -velocity.y);
+
+                ball.Velocity = velocity;
+                ball.UpdatePosition(new Vector(velocity.x, velocity.y));
+            }
+            foreach (var ball in balls)
+            {
+                Task.Run(async () =>
+                {
+                    while (!Disposed)
+                    {
+                        StepSimulation(ball);
+                        await Task.Delay(16);
+                    }
+                });
+            }
+
+
         }
 
         #endregion BusinessLogicAbstractAPI
@@ -82,48 +111,55 @@ namespace TP.ConcurrentProgramming.BusinessLogic
             {
                 for (int i = 0; i < balls.Count; i++)
                 {
-                    DataBall a = balls[i];
-                    for (int j = i + 1; j < balls.Count; j++)
+                    if (balls[i] is Ball a)
                     {
-                        DataBall b = balls[j];
-                        DataVector delta = new(b.Position.x - a.Position.x, b.Position.y - a.Position.y);
-                        double distance = Math.Sqrt(delta.x * delta.x + delta.y * delta.y);
-                        double minDist = (a.Diameter + b.Diameter) / 2.0;
+                        for (int j = i + 1; j < balls.Count; j++)
+                        {
+                            if (balls[j] is Ball b)
+                            {
+                                var delta = new Vector(b.Position.x - a.Position.x, b.Position.y - a.Position.y);
+                                double distance = Math.Sqrt(delta.x * delta.x + delta.y * delta.y);
+                                double minDist = (a.Diameter + b.Diameter) / 2.0;
 
-                        if (distance < minDist && distance > 0.0)
-                            ResolveCollision(a, b, delta, distance);
+                                if (distance < minDist && distance > 0.0)
+                                    ResolveCollision(a, b, delta, distance);
+                            }
+                        }
                     }
                 }
 
-                foreach (DataBall ball in balls)
+                foreach (var ballRef in balls)
                 {
-                    DataVector newVelocity = new(ball.Velocity.x * Friction, ball.Velocity.y * Friction);
-
-                    if (Math.Abs(newVelocity.x) < MinVelocity && Math.Abs(newVelocity.y) < MinVelocity)
-                        newVelocity = new DataVector(0, 0);
-
-                    double newX = ball.Position.x + newVelocity.x;
-                    double newY = ball.Position.y + newVelocity.y;
-
-                    if (newX <= 0 || newX >= TableWidth - ball.Diameter)
+                    if (ballRef is Ball ball)
                     {
-                        newVelocity = new DataVector(-newVelocity.x, newVelocity.y);
-                        newX = Math.Clamp(newX, 0, TableWidth - ball.Diameter);
-                    }
+                        var newVelocity = new Vector(ball.Velocity.x, ball.Velocity.y);
 
-                    if (newY <= 0 || newY >= TableHeight - ball.Diameter)
-                    {
-                        newVelocity = new DataVector(newVelocity.x, -newVelocity.y);
-                        newY = Math.Clamp(newY, 0, TableHeight - ball.Diameter);
-                    }
+                        if (Math.Abs(newVelocity.x) < MinVelocity && Math.Abs(newVelocity.y) < MinVelocity)
+                            newVelocity = new Vector(0, 0);
 
-                    ball.Velocity = newVelocity;
-                    ball.UpdatePosition(new DataVector(newX - ball.Position.x, newY - ball.Position.y));
+                        double newX = ball.Position.x + newVelocity.x;
+                        double newY = ball.Position.y + newVelocity.y;
+
+                        if (newX <= 0 || newX >= TableWidth - ball.Diameter)
+                        {
+                            newVelocity = new Vector(-newVelocity.x, newVelocity.y);
+                            newX = Math.Clamp(newX, 0, TableWidth - ball.Diameter);
+                        }
+
+                        if (newY <= 0 || newY >= TableHeight - ball.Diameter)
+                        {
+                            newVelocity = new Vector(newVelocity.x, -newVelocity.y);
+                            newY = Math.Clamp(newY, 0, TableHeight - ball.Diameter);
+                        }
+
+                        ball.Velocity = newVelocity;
+                        ball.UpdatePosition(new Vector(newX - ball.Position.x, newY - ball.Position.y));
+                    }
                 }
             }
         }
 
-        private void ResolveCollision(DataBall a, DataBall b, DataVector delta, double distance)
+        private void ResolveCollision(Ball a, Ball b, Vector delta, double distance)
         {
             double nx = delta.x / distance;
             double ny = delta.y / distance;
@@ -141,8 +177,8 @@ namespace TP.ConcurrentProgramming.BusinessLogic
             double vA_n_prime = (vA_n * (m1 - m2) + 2 * m2 * vB_n) / (m1 + m2);
             double vB_n_prime = (vB_n * (m2 - m1) + 2 * m1 * vA_n) / (m1 + m2);
 
-            a.Velocity = new DataVector(vA_n_prime * nx + vA_t * tx, vA_n_prime * ny + vA_t * ty);
-            b.Velocity = new DataVector(vB_n_prime * nx + vB_t * tx, vB_n_prime * ny + vB_t * ty);
+            a.Velocity = new Vector(vA_n_prime * nx + vA_t * tx, vA_n_prime * ny + vA_t * ty);
+            b.Velocity = new Vector(vB_n_prime * nx + vB_t * tx, vB_n_prime * ny + vB_t * ty);
         }
 
         #endregion Simulation
@@ -151,14 +187,14 @@ namespace TP.ConcurrentProgramming.BusinessLogic
 
         private readonly double TableWidth = 400;
         private readonly double TableHeight = 400;
-        private readonly double Friction = 0.99;
         private readonly double MinVelocity = 0.1;
-        private readonly double InitialSpeed = 30.0;
+        private readonly double InitialSpeed = 1.0;
 
         private Timer? simulationTimer;
         private bool Disposed = false;
-        private List<DataBall> balls = new();
+        private List<TP.ConcurrentProgramming.Data.ISimulationBall> balls = new();
         private Random random = new();
+        private DataAbstractAPI dataLayer;
 
         #endregion private
 
@@ -169,6 +205,12 @@ namespace TP.ConcurrentProgramming.BusinessLogic
         {
             returnInstanceDisposed(Disposed);
         }
+        public BusinessLogicImplementation(DataAbstractAPI? data = null)
+        {
+            this.dataLayer = data ?? DataAbstractAPI.GetDataLayer();
+            InitializeSimulation();
+        }
+
 
         #endregion TestingInfrastructure
     }

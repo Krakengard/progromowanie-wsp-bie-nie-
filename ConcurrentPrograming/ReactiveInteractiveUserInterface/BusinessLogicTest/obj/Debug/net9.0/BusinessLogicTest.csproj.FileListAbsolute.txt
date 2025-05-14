@@ -175,3 +175,14 @@ C:\Users\barto\Source\Repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\Re
 C:\Users\barto\Source\Repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.pdb
 C:\Users\barto\Source\Repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.genruntimeconfig.cache
 C:\Users\barto\Source\Repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\ref\BusinessLogicTest.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\bin\Debug\net9.0\.msCoverageSourceRootsMapping_BusinessLogicTest
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\bin\Debug\net9.0\CoverletSourceRootsMapping_BusinessLogicTest
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.csproj.AssemblyReference.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.AssemblyInfoInputs.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.AssemblyInfo.cs
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.csproj.CoreCompileInputs.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.sourcelink.json
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\refint\BusinessLogicTest.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogicTest\obj\Debug\net9.0\BusinessLogicTest.pdb

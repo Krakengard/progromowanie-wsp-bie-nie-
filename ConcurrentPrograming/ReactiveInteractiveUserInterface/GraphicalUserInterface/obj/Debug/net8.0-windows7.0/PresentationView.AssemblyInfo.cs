@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright 2022 Mariusz Postol")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("4.2.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("4.2.0+b8c3ebf0308770a5ded805a752bbfebedcf11067")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("4.2.0+c1797dda831a4e8a525663a465a4d8f0073e0332")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP.ConcurrentProgramming.PresentationView")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP.ConcurrentProgramming.PresentationView")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.2.0.0")]

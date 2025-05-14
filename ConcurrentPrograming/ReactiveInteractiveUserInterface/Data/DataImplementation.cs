@@ -52,8 +52,19 @@ namespace TP.ConcurrentProgramming.Data
             if (upperLayerHandler == null)
                 throw new ArgumentNullException(nameof(upperLayerHandler));
 
-            // No-op: all logic moved to BusinessLogic
+            
         }
+
+        public override IBall CreateBall(IVector position, IVector velocity)
+        {
+            return new Ball((Vector)position, (Vector)velocity);
+        }
+
+        public override IVector CreateVector(double x, double y)
+        {
+            return new Vector(x, y);
+        }
+
 
         #endregion DataAbstractAPI
 

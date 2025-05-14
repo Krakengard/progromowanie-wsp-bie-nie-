@@ -24,12 +24,16 @@ namespace TP.ConcurrentProgramming.Data
     #region public API
 
     public abstract void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler);
+        public abstract IBall CreateBall(IVector position, IVector velocity);
 
-    #endregion public API
+        public abstract IVector CreateVector(double x, double y);
 
-    #region IDisposable
 
-    public abstract void Dispose();
+        #endregion public API
+
+        #region IDisposable
+
+        public abstract void Dispose();
 
     #endregion IDisposable
 
@@ -59,4 +63,5 @@ namespace TP.ConcurrentProgramming.Data
 
     IVector Velocity { get; set; }
   }
+
 }

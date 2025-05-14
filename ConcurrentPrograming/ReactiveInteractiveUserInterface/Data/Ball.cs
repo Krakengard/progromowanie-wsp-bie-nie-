@@ -10,51 +10,95 @@
 
 namespace TP.ConcurrentProgramming.Data
 {
-    public class Ball : IBall
+    public class Ball : ISimulationBall
     {
         #region ctor
 
-        public double Mass { get; } = 1.0; 
-
+        public double Mass { get; } = 5.0;
 
         public Ball(Vector initialPosition, Vector initialVelocity)
-         {
-           Position = initialPosition;
-           Velocity = initialVelocity;
-         }
+        {
+            _position = initialPosition;
+            _velocity = initialVelocity;
+        }
 
-         #endregion ctor
+        #endregion ctor
 
-         #region IBall
+        #region IBall
 
-         public event EventHandler<IVector>? NewPositionNotification;
+        public event EventHandler<IVector>? NewPositionNotification;
 
-         public IVector Velocity { get; set; }
+        public IVector Velocity
+        {
+            get
+            {
+                lock (_lock)
+                    return _velocity;
+            }
+            set
+            {
+                lock (_lock)
+                    _velocity = (Vector)value;
+            }
+        }
 
-             #endregion IBall
+        #endregion IBall
 
-             #region private
+        #region Synchronization
 
-             public Vector Position;
+        private readonly object _lock = new();
+        private Vector _position;
+        private Vector _velocity;
 
-             public double Diameter { get; } = 20;
-             private void RaiseNewPositionChangeNotification()
-             {
-           NewPositionNotification?.Invoke(this, Position);
-             }
+        #endregion Synchronization
+
+        #region ISimulationBall implementation
+
+        public double Diameter { get; } = 20;
+
+        public Vector Position
+        {
+            get
+            {
+                lock (_lock)
+                    return _position;
+            }
+        }
 
         public void UpdatePosition(Vector delta)
-
         {
-            /*Position = new Vector(Position.x + delta.x, Position.y + delta.y);
-            RaiseNewPositionChangeNotification();*/
-            Position = new Vector(
-                Math.Clamp(Position.x + delta.x, 0, 400 - Diameter),
-                Math.Clamp(Position.y + delta.y, 0, 400 - Diameter)
+            lock (_lock)
+            {
+                _position = new Vector(
+                    Math.Clamp(_position.x + delta.x, 0, 400 - Diameter),
+                    Math.Clamp(_position.y + delta.y, 0, 400 - Diameter)
                 );
-                RaiseNewPositionChangeNotification();
-             }
-        public IVector GetPosition() => Position;
-        #endregion private
+                RaiseNewPositionChangeNotification(_position);
+            }
+        }
+
+        private void RaiseNewPositionChangeNotification(Vector newPos)
+        {
+            // Poza lockiem – aby uniknąć deadlocków w zewnętrznych handlerach
+            NewPositionNotification?.Invoke(this, newPos);
+        }
+
+        public IVector GetPosition()
+        {
+            lock (_lock)
+                return _position;
+        }
+
+
+
+        #endregion
     }
+    public interface ISimulationBall : IBall
+    {
+        double Mass { get; }
+        double Diameter { get; }
+        Vector Position { get; }
+        void UpdatePosition(Vector delta);
+    }
+
 }
