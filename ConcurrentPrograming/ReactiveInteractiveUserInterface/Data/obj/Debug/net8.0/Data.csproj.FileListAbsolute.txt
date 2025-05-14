@@ -36,3 +36,16 @@ D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteracti
 D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\refint\DataLayer.dll
 D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\DataLayer.pdb
 D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\ref\DataLayer.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\bin\Debug\net8.0\DataLayer.deps.json
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\bin\Debug\net8.0\DataLayer.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\bin\Debug\net8.0\DataLayer.pdb
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\Data.csproj.AssemblyReference.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\Data.AssemblyInfoInputs.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\Data.AssemblyInfo.cs
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\Data.sourcelink.json
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\DataLayer.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\refint\DataLayer.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\DataLayer.pdb
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\Data\obj\Debug\net8.0\ref\DataLayer.dll

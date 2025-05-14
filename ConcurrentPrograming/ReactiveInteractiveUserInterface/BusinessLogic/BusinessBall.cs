@@ -10,9 +10,9 @@
 
 namespace TP.ConcurrentProgramming.BusinessLogic
 {
-  internal class Ball : IBall
+  internal class BusinessBall : IBall
   {
-    public Ball(Data.IBall ball)
+    public BusinessBall(Data.IBall ball)
     {
       ball.NewPositionNotification += RaisePositionChangeEvent;
     }

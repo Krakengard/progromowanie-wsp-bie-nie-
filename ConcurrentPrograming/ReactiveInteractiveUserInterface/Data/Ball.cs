@@ -10,14 +10,14 @@
 
 namespace TP.ConcurrentProgramming.Data
 {
-    internal class Ball : IBall
+    public class Ball : IBall
     {
         #region ctor
 
         public double Mass { get; } = 1.0; 
 
 
-        internal Ball(Vector initialPosition, Vector initialVelocity)
+        public Ball(Vector initialPosition, Vector initialVelocity)
          {
            Position = initialPosition;
            Velocity = initialVelocity;
@@ -35,7 +35,7 @@ namespace TP.ConcurrentProgramming.Data
 
              #region private
 
-             internal Vector Position;
+             public Vector Position;
 
              public double Diameter { get; } = 20;
              private void RaiseNewPositionChangeNotification()
@@ -43,11 +43,12 @@ namespace TP.ConcurrentProgramming.Data
            NewPositionNotification?.Invoke(this, Position);
              }
 
-             internal void Move(Vector delta)
-             {
-                 /*Position = new Vector(Position.x + delta.x, Position.y + delta.y);
-                 RaiseNewPositionChangeNotification();*/
-                Position = new Vector(
+        public void UpdatePosition(Vector delta)
+
+        {
+            /*Position = new Vector(Position.x + delta.x, Position.y + delta.y);
+            RaiseNewPositionChangeNotification();*/
+            Position = new Vector(
                 Math.Clamp(Position.x + delta.x, 0, 400 - Diameter),
                 Math.Clamp(Position.y + delta.y, 0, 400 - Diameter)
                 );

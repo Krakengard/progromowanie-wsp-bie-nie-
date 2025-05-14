@@ -57,3 +57,23 @@ D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteracti
 D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.PresentationViewModel.dll
 D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.pdb
 D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.PresentationViewModel.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.deps.json
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.pdb
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\DataLayer.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.PresentationModel.pdb
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\DataLayer.pdb
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.csproj.AssemblyReference.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.AssemblyInfoInputs.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.AssemblyInfo.cs
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.csproj.CoreCompileInputs.cache
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\PresentationViewModel.sourcelink.json
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\Presenta.E317AD4C.Up2Date
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.PresentationViewModel.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\TP.ConcurrentProgramming.PresentationViewModel.pdb
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationViewModel\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.PresentationViewModel.dll

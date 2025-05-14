@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2O8ExLN5KxQ=",
+  "dgSpecHash": "nbSF0rI9BlQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj",
+  "projectFilePath": "C:\\Users\\barto\\source\\repos\\Krakengard\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationModel\\PresentationModel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barto\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\barto\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512"

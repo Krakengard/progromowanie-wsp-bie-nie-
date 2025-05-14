@@ -1817,11 +1817,11 @@
   "project": {
     "version": "4.2.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModelTest\\PresentationViewModelTest.csproj",
+      "projectUniqueName": "C:\\Users\\barto\\source\\repos\\Krakengard\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModelTest\\PresentationViewModelTest.csproj",
       "projectName": "PresentationViewModelTest",
-      "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModelTest\\PresentationViewModelTest.csproj",
+      "projectPath": "C:\\Users\\barto\\source\\repos\\Krakengard\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModelTest\\PresentationViewModelTest.csproj",
       "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\barto\\Source\\Repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModelTest\\obj\\",
+      "outputPath": "C:\\Users\\barto\\source\\repos\\Krakengard\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModelTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1843,8 +1843,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModel\\PresentationViewModel.csproj": {
-              "projectPath": "C:\\Users\\barto\\source\\repos\\1\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModel\\PresentationViewModel.csproj"
+            "C:\\Users\\barto\\source\\repos\\Krakengard\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModel\\PresentationViewModel.csproj": {
+              "projectPath": "C:\\Users\\barto\\source\\repos\\Krakengard\\progromowanie-wsp-bie-nie-\\ConcurrentPrograming\\ReactiveInteractiveUserInterface\\PresentationViewModel\\PresentationViewModel.csproj"
             }
           }
         }
