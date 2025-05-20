@@ -24,6 +24,22 @@ namespace TP.ConcurrentProgramming.Data
         #endregion ctor
 
         #region DataAbstractAPI
+        public override void MoveBall(IBall ball)
+        {
+            if (ball is Ball concreteBall)
+            {
+                concreteBall.Move();
+            }
+        }
+
+        public override void Stop()
+        {
+            lock (_ballsLock)
+            {
+                BallsList.Clear();
+            }
+            _isRunning = false;
+        }
 
         protected virtual void Dispose(bool disposing)
         {
@@ -48,7 +64,7 @@ namespace TP.ConcurrentProgramming.Data
         public override void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler)
         {
             Random rand = new Random();
-            double margin = 20;
+            double margin = 10;
             double width = 400;
             double height = 400;
 
@@ -57,14 +73,17 @@ namespace TP.ConcurrentProgramming.Data
                 double x = rand.NextDouble() * (width - 2 * margin) + margin;
                 double y = rand.NextDouble() * (height - 2 * margin) + margin;
 
-                double vx = rand.NextDouble() * 2 - 1; 
-                double vy = rand.NextDouble() * 2 - 1;
+                double vx = (rand.NextDouble() ) * 5;
+                double vy = (rand.NextDouble() ) * 5;
 
                 var position = CreateVector(x, y);
                 var velocity = CreateVector(vx, vy);
 
                 var ball = CreateBall(position, velocity);
-                balls.Add(ball);
+                lock (_ballsLock)
+                {
+                    BallsList.Add((Ball)ball);
+                }
                 upperLayerHandler(position, ball);
             }
         }
@@ -92,6 +111,8 @@ namespace TP.ConcurrentProgramming.Data
         private bool Disposed = false;
         private List<Ball> BallsList = [];
         private readonly List<IBall> balls = new();
+        private readonly object _ballsLock = new object();
+        private bool _isRunning = false;
 
 
         #endregion private

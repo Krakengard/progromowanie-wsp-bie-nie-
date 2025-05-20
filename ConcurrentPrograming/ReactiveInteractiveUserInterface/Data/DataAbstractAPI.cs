@@ -28,6 +28,9 @@ namespace TP.ConcurrentProgramming.Data
 
         public abstract IVector CreateVector(double x, double y);
 
+        public abstract void MoveBall(IBall ball);
+        public abstract void Stop();
+
 
         #endregion public API
 
@@ -46,22 +49,20 @@ namespace TP.ConcurrentProgramming.Data
 
   public interface IVector
   {
-    /// <summary>
-    /// The X component of the vector.
-    /// </summary>
+   
     double x { get; init; }
 
-    /// <summary>
-    /// The y component of the vector.
-    /// </summary>
+   
     double y { get; init; }
   }
 
   public interface IBall
   {
     event EventHandler<IVector> NewPositionNotification;
+        IVector GetPosition();
+        void SetPosition(IVector newPosition);
 
-    IVector Velocity { get; set; }
+        IVector Velocity { get; set; }
   }
 
 }

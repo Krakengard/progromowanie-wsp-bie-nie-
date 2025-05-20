@@ -10,7 +10,7 @@
 
 namespace TP.ConcurrentProgramming.Data
 {
-    public class Ball : ISimulationBall
+    public class Ball : IBall
     {
         #region ctor
 
@@ -47,7 +47,7 @@ namespace TP.ConcurrentProgramming.Data
         #region Synchronization
 
         private readonly object _lock = new();
-        private Vector _position;
+        private IVector _position;
         private Vector _velocity;
 
         #endregion Synchronization
@@ -61,7 +61,7 @@ namespace TP.ConcurrentProgramming.Data
             get
             {
                 lock (_lock)
-                    return _position;
+                    return (Vector)_position;
             }
         }
 
@@ -73,32 +73,60 @@ namespace TP.ConcurrentProgramming.Data
                     Math.Clamp(_position.x + delta.x, 0, 400 - Diameter),
                     Math.Clamp(_position.y + delta.y, 0, 400 - Diameter)
                 );
-                RaiseNewPositionChangeNotification(_position);
+                RaiseNewPositionChangeNotification((Vector)_position);
             }
         }
 
         private void RaiseNewPositionChangeNotification(Vector newPos)
         {
-            // Poza lockiem – aby uniknąć deadlocków w zewnętrznych handlerach
+            
             NewPositionNotification?.Invoke(this, newPos);
         }
 
-        public IVector GetPosition()
+
+        public void Move()
+        {
+            double radius = 10;
+            double maxX = 390;
+            double maxY = 390 ;
+            double minX = 0;
+            double minY = 0;
+
+            double newX = _position.x + Velocity.x;
+            double newY = _position.y + Velocity.y;
+
+            double vx = Velocity.x;
+            double vy = Velocity.y;
+
+            // Odbicia od ścian
+            if (newX <= minX || newX >= maxX)
+                vx = -vx;
+            if (newY <= minY || newY >= maxY)
+                vy = -vy;
+
+            Velocity = new Vector(vx, vy);
+
+            _position = new Vector(
+                Math.Clamp(_position.x + vx, minX, maxX),
+                Math.Clamp(_position.y + vy, minY, maxY)
+            );
+
+            NewPositionNotification?.Invoke(this, _position);
+        }
+
+        public IVector GetPosition() => _position;
+
+        public void SetPosition(IVector newPosition)
         {
             lock (_lock)
-                return _position;
+                _position = newPosition;
         }
+
 
 
 
         #endregion
     }
-    public interface ISimulationBall : IBall
-    {
-        double Mass { get; }
-        double Diameter { get; }
-        Vector Position { get; }
-        void UpdatePosition(Vector delta);
-    }
+    
 
 }

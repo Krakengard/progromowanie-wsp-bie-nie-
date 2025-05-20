@@ -180,8 +180,8 @@ C:\Users\barto\Source\Repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\Re
 C:\Users\barto\Source\Repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\obj\Debug\net8.0\ref\PresentationModelTest.dll
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\.msCoverageSourceRootsMapping_PresentationModelTest
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\CoverletSourceRootsMapping_PresentationModelTest
-C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\testhost.exe
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\testhost.dll
+C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\testhost.exe
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\pl\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\pl\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\PresentationModelTest\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
