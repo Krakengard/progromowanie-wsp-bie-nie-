@@ -64,14 +64,15 @@ namespace TP.ConcurrentProgramming.Data
         public override void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler)
         {
             Random rand = new Random();
-            double margin = 10;
-            double width = 400;
-            double height = 400;
+            double spawnWidth = 100;
+            double spawnHeight = 100;
+            double offsetX = 150;
+            double offsetY = 150;
 
             for (int i = 0; i < numberOfBalls; i++)
             {
-                double x = rand.NextDouble() * (width - 2 * margin) + margin;
-                double y = rand.NextDouble() * (height - 2 * margin) + margin;
+                double x = rand.NextDouble() * spawnWidth + offsetX;
+                double y = rand.NextDouble() * spawnHeight + offsetY;
 
                 double vx = (rand.NextDouble() ) * 5;
                 double vy = (rand.NextDouble() ) * 5;

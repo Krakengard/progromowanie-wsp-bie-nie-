@@ -97,7 +97,7 @@ namespace TP.ConcurrentProgramming.Data
             double vx = Velocity.x;
             double vy = Velocity.y;
 
-            // Odbicia od ścian
+            
             if (newX <= minX || newX >= maxX)
                 vx = -vx;
             if (newY <= minY || newY >= maxY)
