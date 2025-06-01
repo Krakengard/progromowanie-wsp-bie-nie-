@@ -67,7 +67,8 @@ namespace TP.ConcurrentProgramming.Data
 
         public void UpdatePosition(Vector delta)
         {
-            lock (_lock) {
+            lock (_lock)
+            {
                 _position = new Vector(
                     Math.Clamp(_position.x + delta.x, 0, 400 - Diameter),
                     Math.Clamp(_position.y + delta.y, 0, 400 - Diameter)
@@ -97,7 +98,7 @@ namespace TP.ConcurrentProgramming.Data
             double vx = Velocity.x;
             double vy = Velocity.y;
 
-            
+
             if (newX <= minX || newX >= maxX)
                 vx = -vx;
             if (newY <= minY || newY >= maxY)
@@ -113,8 +114,10 @@ namespace TP.ConcurrentProgramming.Data
             NewPositionNotification?.Invoke(this, _position);
         }
 
-        public IVector GetPosition() {
-            lock (_lock) {
+        public IVector GetPosition()
+        {
+            lock (_lock)
+            {
                 return _position;
             }
         }
@@ -131,6 +134,6 @@ namespace TP.ConcurrentProgramming.Data
 
         #endregion
     }
-    
+
 
 }

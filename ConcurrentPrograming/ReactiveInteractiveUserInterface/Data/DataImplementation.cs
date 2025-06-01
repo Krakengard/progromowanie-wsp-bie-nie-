@@ -10,6 +10,8 @@
 
 using System;
 using System.Diagnostics;
+using System.Collections.Concurrent;
+
 
 
 namespace TP.ConcurrentProgramming.Data
@@ -34,12 +36,15 @@ namespace TP.ConcurrentProgramming.Data
 
         public override void Stop()
         {
+            _cancellationTokenSource?.Cancel();
+            _loggerTask?.Wait();
             lock (_ballsLock)
             {
                 BallsList.Clear();
             }
             _isRunning = false;
         }
+
 
         protected virtual void Dispose(bool disposing)
         {
@@ -61,6 +66,8 @@ namespace TP.ConcurrentProgramming.Data
             GC.SuppressFinalize(this);
         }
 
+        private CancellationTokenSource _cancellationTokenSource;
+
         public override void Start(int numberOfBalls, Action<IVector, IBall> upperLayerHandler)
         {
             Random rand = new Random();
@@ -74,20 +81,67 @@ namespace TP.ConcurrentProgramming.Data
                 double x = rand.NextDouble() * spawnWidth + offsetX;
                 double y = rand.NextDouble() * spawnHeight + offsetY;
 
-                double vx = (rand.NextDouble() ) * 5;
-                double vy = (rand.NextDouble() ) * 5;
+                double vx = (rand.NextDouble()) * 5;
+                double vy = (rand.NextDouble()) * 5;
 
                 var position = CreateVector(x, y);
                 var velocity = CreateVector(vx, vy);
-
                 var ball = CreateBall(position, velocity);
+
                 lock (_ballsLock)
-                {
                     BallsList.Add((Ball)ball);
-                }
+
                 upperLayerHandler(position, ball);
             }
+
+            _cancellationTokenSource = new CancellationTokenSource();
+            // 🔽 Вот здесь добавляется вызов логгера:
+            StartLogger();
+
+            // 🔽 Запускаем симуляцию:
+            Task.Run(() => RunSimulation(_cancellationTokenSource.Token));
         }
+
+
+
+        private async Task RunSimulation(CancellationToken token)
+        {
+            while (!token.IsCancellationRequested)
+            {
+                lock (_ballsLock)
+                {
+                    foreach (var ball in BallsList)
+                    {
+                        MoveBall(ball);
+                        _logQueue.Enqueue(ball); // для логгера
+                    }
+                }
+                await Task.Delay(20); // 50 FPS
+            }
+        }
+
+        private readonly ConcurrentQueue<IBall> _logQueue = new();
+        private Task _loggerTask;
+
+        private void StartLogger()
+        {
+            _loggerTask = Task.Run(() =>
+            {
+                using StreamWriter writer = new("diagnostics.txt", append: true);
+                while (!_cancellationTokenSource.IsCancellationRequested)
+                {
+                    while (_logQueue.TryDequeue(out var ball))
+                    {
+                        var pos = ball.GetPosition();
+                        var vel = ball.Velocity;
+                        var logEntry = $"Time: {DateTime.UtcNow:HH:mm:ss.fff} | Pos: ({pos.x:F2}, {pos.y:F2}) | Vel: ({vel.x:F2}, {vel.y:F2})";
+                        writer.WriteLine(logEntry);
+                    }
+                    Thread.Sleep(100); // минимизация нагрузки
+                }
+            });
+        }
+
 
 
 
