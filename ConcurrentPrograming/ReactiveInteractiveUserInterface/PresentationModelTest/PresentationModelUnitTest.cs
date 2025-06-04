@@ -73,8 +73,13 @@ namespace TP.ConcurrentProgramming.Presentation.Model.Test
         Assert.IsNotNull(upperLayerHandler);
       }
 
-      #endregion BusinessLogicAbstractAPI
-    }
+            public override void Stop()
+            {
+                throw new NotImplementedException();
+            }
+
+            #endregion BusinessLogicAbstractAPI
+        }
 
     #endregion testing instrumentation
   }

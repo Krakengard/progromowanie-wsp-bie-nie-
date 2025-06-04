@@ -34,6 +34,15 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
 
       public event EventHandler<Data.IVector>? NewPositionNotification;
 
+       public Data.IVector GetPosition()
+       {
+         return new VectorFixture(0.0, 0.0); 
+       }
+
+       public void SetPosition(Data.IVector position)
+       {
+                
+       }
       internal void Move()
       {
         NewPositionNotification?.Invoke(this, new VectorFixture(0.0, 0.0));

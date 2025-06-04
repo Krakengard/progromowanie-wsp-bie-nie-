@@ -1,53 +1,3 @@
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.deps.json
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.pdb
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\Business.CF5D6E35.Up2Date
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\TP-master\TP-master\ConcurrentProgramming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.deps.json
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.dll
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.pdb
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.sourcelink.json
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\Business.CF5D6E35.Up2Date
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.BusinessLogic.dll
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-C:\Users\barto\source\repos\1\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.deps.json
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.pdb
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.sourcelink.json
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\Business.CF5D6E35.Up2Date
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-D:\EEEEEW GROSS\2 kurs pl\4 sem\proga\rep\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.BusinessLogic.dll
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.deps.json
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
@@ -64,19 +14,3 @@ C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentProg
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.BusinessLogic.dll
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
 C:\Users\barto\source\repos\Krakengard\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.deps.json
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.dll
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\bin\Debug\net8.0\DataLayer.pdb
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\BusinessLogic.sourcelink.json
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\Business.CF5D6E35.Up2Date
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\refint\TP.ConcurrentProgramming.BusinessLogic.dll
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\TP.ConcurrentProgramming.BusinessLogic.pdb
-D:\prog_repo\progromowanie-wsp-bie-nie-\ConcurrentPrograming\ReactiveInteractiveUserInterface\BusinessLogic\obj\Debug\net8.0\ref\TP.ConcurrentProgramming.BusinessLogic.dll

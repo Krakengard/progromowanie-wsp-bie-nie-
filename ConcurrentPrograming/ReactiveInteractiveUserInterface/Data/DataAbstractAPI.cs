@@ -63,6 +63,7 @@ namespace TP.ConcurrentProgramming.Data
         void SetPosition(IVector newPosition);
 
         IVector Velocity { get; set; }
-  }
+
+    }
 
 }

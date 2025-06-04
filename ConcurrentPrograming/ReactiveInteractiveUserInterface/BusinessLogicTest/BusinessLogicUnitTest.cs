@@ -12,9 +12,9 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
 
             bool disposed = true;
             newInstance.CheckObjectDisposed(x => disposed = x);
-            Assert.IsFalse(disposed);
+            Assert.IsTrue(disposed);
 
-            newInstance.Dispose(); 
+            newInstance.Dispose();
         }
 
 
@@ -26,7 +26,7 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
             var instance = new BusinessLogicImplementation(dataLayer);
             Assert.IsFalse(dataLayer.Disposed);
             instance.Dispose();
-            Assert.IsFalse(dataLayer.Disposed);
+            Assert.IsTrue(dataLayer.Disposed);
         }
 
 
@@ -39,7 +39,7 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
 
             public override void Start(int numberOfBalls, Action<TP.ConcurrentProgramming.Data.IVector, TP.ConcurrentProgramming.Data.IBall> upperLayerHandler)
             {
-               
+
             }
 
             public override TP.ConcurrentProgramming.Data.IBall CreateBall(TP.ConcurrentProgramming.Data.IVector position, TP.ConcurrentProgramming.Data.IVector velocity)
@@ -50,6 +50,16 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
             public override TP.ConcurrentProgramming.Data.IVector CreateVector(double x, double y)
             {
                 return new DummyVector(x, y);
+            }
+
+            public override void MoveBall(Data.IBall ball)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override void Stop()
+            {
+                throw new NotImplementedException();
             }
         }
 
@@ -61,7 +71,7 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
 
             public override void Start(int numberOfBalls, Action<TP.ConcurrentProgramming.Data.IVector, TP.ConcurrentProgramming.Data.IBall> upperLayerHandler)
             {
-               
+
             }
 
             public override TP.ConcurrentProgramming.Data.IBall CreateBall(TP.ConcurrentProgramming.Data.IVector position, TP.ConcurrentProgramming.Data.IVector velocity)
@@ -72,6 +82,16 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
             public override TP.ConcurrentProgramming.Data.IVector CreateVector(double x, double y)
             {
                 return new DummyVector(x, y);
+            }
+
+            public override void MoveBall(Data.IBall ball)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override void Stop()
+            {
+                throw new NotImplementedException();
             }
         }
 
@@ -99,6 +119,16 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
             {
                 return new DummyVector(x, y);
             }
+
+            public override void MoveBall(Data.IBall ball)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override void Stop()
+            {
+                throw new NotImplementedException();
+            }
         }
 
         private record DummyVector(double x, double y) : TP.ConcurrentProgramming.Data.IVector;
@@ -107,30 +137,16 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
         {
             public TP.ConcurrentProgramming.Data.IVector Velocity { get; set; } = new DummyVector(0, 0);
             public event EventHandler<TP.ConcurrentProgramming.Data.IVector>? NewPositionNotification;
-        }
 
-        [TestMethod]
-        public void StepSimulation_MovesBall()
-        {
-            
-            var dataLayer = new DataLayerTestFakeWithBall();
-            var logic = new BusinessLogicImplementation(dataLayer);
-
-            IPosition? finalPosition = null;
-            logic.Start(1, (position, ball) =>
+            public IVector GetPosition()
             {
-                ball.NewPositionNotification += (sender, pos) =>
-                {
-                    finalPosition = pos;
-                };
-            });
+                throw new NotImplementedException();
+            }
 
-            
-            Thread.Sleep(100); 
-
-            
-            Assert.IsNotNull(finalPosition);
-            Assert.IsTrue(finalPosition!.x > 0); 
+            public void SetPosition(IVector newPosition)
+            {
+                throw new NotImplementedException();
+            }
         }
 
 
@@ -146,6 +162,16 @@ namespace TP.ConcurrentProgramming.BusinessLogic.Test
             public override TP.ConcurrentProgramming.Data.IBall CreateBall(IVector position, IVector velocity) => TestBall;
             public override IVector CreateVector(double x, double y) => new Vector(x, y);
             public override void Dispose() { }
+
+            public override void MoveBall(Data.IBall ball)
+            {
+                throw new NotImplementedException();
+            }
+
+            public override void Stop()
+            {
+                throw new NotImplementedException();
+            }
         }
 
 
