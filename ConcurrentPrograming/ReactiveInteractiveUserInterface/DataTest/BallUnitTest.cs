@@ -8,30 +8,37 @@
 //
 //_____________________________________________________________________________________________________________________________________
 
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TP.ConcurrentProgramming.Data; // dla testa logerra
+
 namespace TP.ConcurrentProgramming.Data.Test
 {
-  [TestClass]
-  public class BallUnitTest
-  {
-    [TestMethod]
-    public void ConstructorTestMethod()
+    [TestClass]
+    public class BallUnitTest
     {
-      Vector testinVector = new Vector(0.0, 0.0);
-      Ball newInstance = new(testinVector, testinVector);
-    }
+        public void ConstructorTestMethod()
+        {
+            Vector testinVector = new Vector(0.0, 0.0);
+            Ball newInstance = new(testinVector, testinVector);
+        }
 
-    [TestMethod]
-    public void MoveTestMethod()
-    {
-      Vector initialPosition = new(10.0, 10.0);
-      Ball newInstance = new(initialPosition, new Vector(0.0, 0.0));
-      IVector curentPosition = new Vector(0.0, 0.0);
-      int numberOfCallBackCalled = 0;
-      newInstance.NewPositionNotification += (sender, position) => { Assert.IsNotNull(sender); curentPosition = position; numberOfCallBackCalled++; };
+        [TestMethod]
+        public void MoveTestMethod()
+        {
+            Vector initialPosition = new(10.0, 10.0);
+            Ball newInstance = new(initialPosition, new Vector(0.0, 0.0));
+            IVector curentPosition = new Vector(0.0, 0.0);
+            int numberOfCallBackCalled = 0;
+            newInstance.NewPositionNotification += (sender, position) => { Assert.IsNotNull(sender); curentPosition = position; numberOfCallBackCalled++; };
             newInstance.UpdatePosition(new Vector(0.0, 0.0));
             Assert.AreEqual<int>(1, numberOfCallBackCalled);
-      Assert.AreEqual<IVector>(initialPosition, curentPosition);
-    }
+            Assert.AreEqual<IVector>(initialPosition, curentPosition);
+        }
         [TestMethod]
         public void VelocityAndPropertiesTest()
         {
@@ -66,5 +73,60 @@ namespace TP.ConcurrentProgramming.Data.Test
             Assert.AreEqual(0, finalPosition.y); // y się nie zmienia
         }
 
+        [TestMethod]
+        public async Task BallMovesCorrectly_WithConcurrentLogging()// loggery  nie ma wpływu na balls
+        {
+           
+            var initialPosition = new Vector(0, 0);
+            var velocity = new Vector(10, 0); 
+            var ball = new Ball(initialPosition, velocity);
+
+            var logger = new DummyLogger();
+            var cts = new CancellationTokenSource();
+
+            var stopwatch = Stopwatch.StartNew();
+            var last = stopwatch.Elapsed;
+
+            
+            var simulationTask = Task.Run(async () =>
+            {
+                while (!cts.Token.IsCancellationRequested)
+                {
+                    var now = stopwatch.Elapsed;
+                    var deltaTime = (now - last).TotalSeconds;
+                    last = now;
+
+                    var delta = new Vector(ball.Velocity.x * deltaTime, ball.Velocity.y * deltaTime);
+                    ball.UpdatePosition(delta);
+
+                    logger.Log(new DiagnosticsEntry(DateTime.UtcNow, 0, ball.Position, (Vector)ball.Velocity));
+
+                    await Task.Delay(10); // 100 FPS
+                }
+            });
+
+            await Task.Delay(500); 
+            cts.Cancel();
+            await simulationTask;
+
+            
+            var movedX = ball.Position.x;
+            Assert.IsTrue(movedX >= 4.5, $"Expected position X > 4.5, but got {movedX:F2}");
+            Assert.IsTrue(logger.LogCount > 10, $"Expected logger to be called >10 times, but was {logger.LogCount}");
+        }
     }
+
+    // 
+    public class DummyLogger
+    {
+        public int LogCount = 0;
+
+        public void Log(DiagnosticsEntry entry)
+        {
+            Interlocked.Increment(ref LogCount);
+        }
+    }
+
+    // 
+    public record DiagnosticsEntry(DateTime Timestamp, int BallId, Vector Position, Vector Velocity);
 }

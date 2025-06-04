@@ -10,7 +10,7 @@
 
 using System;
 using System.Diagnostics;
-using System.Collections.Concurrent;
+using System.Collections.Concurrent;////
 
 
 
@@ -37,7 +37,7 @@ namespace TP.ConcurrentProgramming.Data
         public override void Stop()
         {
             _cancellationTokenSource?.Cancel();
-            _loggerTask?.Wait();
+            _loggerTask?.Wait();//czekamy zapisow ligow
             lock (_ballsLock)
             {
                 BallsList.Clear();
@@ -95,10 +95,8 @@ namespace TP.ConcurrentProgramming.Data
             }
 
             _cancellationTokenSource = new CancellationTokenSource();
-            // 🔽 Вот здесь добавляется вызов логгера:
+            // logger
             StartLogger();
-
-            // 🔽 Запускаем симуляцию:
             Task.Run(() => RunSimulation(_cancellationTokenSource.Token));
         }
 
@@ -106,17 +104,29 @@ namespace TP.ConcurrentProgramming.Data
 
         private async Task RunSimulation(CancellationToken token)
         {
+            var stopwatch = Stopwatch.StartNew();
+            var lastTime = stopwatch.Elapsed;
+
             while (!token.IsCancellationRequested)
             {
+                var now = stopwatch.Elapsed;
+                var deltaTime = (now - lastTime).TotalSeconds; // czas w sec
+                lastTime = now;
+
                 lock (_ballsLock)
                 {
                     foreach (var ball in BallsList)
                     {
-                        MoveBall(ball);
-                        _logQueue.Enqueue(ball); // для логгера
+                        //MoveBall(ball);
+                        // вычисляем смещение
+                        var velocity = ball.Velocity;
+                        var delta = new Vector(velocity.x * deltaTime, velocity.y * deltaTime);
+                        ball.UpdatePosition(delta);
+
+                        _logQueue.Enqueue(ball); // logger
                     }
                 }
-                await Task.Delay(20); // 50 FPS
+                await Task.Delay(10); // 100 FPS
             }
         }
 
@@ -137,7 +147,7 @@ namespace TP.ConcurrentProgramming.Data
                         var logEntry = $"Time: {DateTime.UtcNow:HH:mm:ss.fff} | Pos: ({pos.x:F2}, {pos.y:F2}) | Vel: ({vel.x:F2}, {vel.y:F2})";
                         writer.WriteLine(logEntry);
                     }
-                    Thread.Sleep(100); // минимизация нагрузки
+                    Thread.Sleep(100); // 
                 }
             });
         }

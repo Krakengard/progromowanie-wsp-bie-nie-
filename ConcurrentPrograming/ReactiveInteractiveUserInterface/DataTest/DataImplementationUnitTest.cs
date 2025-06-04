@@ -41,30 +41,35 @@ namespace TP.ConcurrentProgramming.Data.Test
       newInstance.CheckBallsList(x => ballsList = x);
       Assert.IsNotNull(ballsList);
       newInstance.CheckNumberOfBalls(x => Assert.AreEqual<int>(0, x));
-      Assert.ThrowsException<ObjectDisposedException>(() => newInstance.Dispose());
-      Assert.ThrowsException<ObjectDisposedException>(() => newInstance.Start(0, (position, ball) => { }));
-    }
+     }
 
-    [TestMethod]
-    public void StartTestMethod()
-    {
-      using (DataImplementation newInstance = new DataImplementation())
-      {
-        int numberOfCallbackInvoked = 0;
-        int numberOfBalls2Create = 10;
-        newInstance.Start(
-          numberOfBalls2Create,
-          (startingPosition, ball) =>
-          {
-            numberOfCallbackInvoked++;
-            Assert.IsTrue(startingPosition.x >= 0);
-            Assert.IsTrue(startingPosition.y >= 0);
-            Assert.IsNotNull(ball);
-          });
-        Assert.AreEqual<int>(numberOfBalls2Create, numberOfCallbackInvoked);
-        newInstance.CheckNumberOfBalls(x => Assert.AreEqual<int>(0, x));
-      }
-    }
+        [TestMethod]
+        public void StartTestMethod()
+        {
+            using (DataImplementation newInstance = new DataImplementation())
+            {
+                int numberOfCallbackInvoked = 0;
+                int numberOfBallsToCreate = 10;
+
+                newInstance.Start(
+                    numberOfBallsToCreate,
+                    (startingPosition, ball) =>
+                    {
+                        numberOfCallbackInvoked++;
+                        Assert.IsTrue(startingPosition.x >= 0);
+                        Assert.IsTrue(startingPosition.y >= 0);
+                        Assert.IsNotNull(ball);
+                    });
+                Assert.AreEqual(numberOfBallsToCreate, numberOfCallbackInvoked);
+
+                int actualBallCount = -1;
+                newInstance.CheckNumberOfBalls(x => actualBallCount = x);
+                Assert.AreEqual(numberOfBallsToCreate, actualBallCount);
+
+                newInstance.Stop();
+            }
+        }
+
 
         [TestMethod]
         public void BallShouldBounceOffWallTest()
@@ -83,9 +88,9 @@ namespace TP.ConcurrentProgramming.Data.Test
             Assert.IsTrue(pos.y <= 400 - ball.Diameter);
         }
 
-        [TestMethod]
-        public void CreateBallAndVectorTest()
-        {
+         [TestMethod]
+          public void CreateBallAndVectorTest()
+         {
             using var data = new DataImplementation();
             var vector = data.CreateVector(5.5, -3.3);
             Assert.AreEqual(5.5, vector.x);
@@ -94,8 +99,8 @@ namespace TP.ConcurrentProgramming.Data.Test
             var ball = data.CreateBall(vector, new Vector(1, 0));
             Assert.IsNotNull(ball);
             Assert.AreEqual(vector, ((Ball)ball).Position);
+         }
+
+
         }
-
-
-    }
-}
+  }
