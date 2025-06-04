@@ -10,38 +10,38 @@
 
 namespace TP.ConcurrentProgramming.Data.Test
 {
-  [TestClass]
-  public class DataImplementationUnitTest
-  {
-    [TestMethod]
-    public void ConstructorTestMethod()
+    [TestClass]
+    public class DataImplementationUnitTest
     {
-      using (DataImplementation newInstance = new DataImplementation())
-      {
-        IEnumerable<IBall>? ballsList = null;
-        newInstance.CheckBallsList(x => ballsList = x);
-        Assert.IsNotNull(ballsList);
-        int numberOfBalls = 0;
-        newInstance.CheckNumberOfBalls(x => numberOfBalls = x);
-        Assert.AreEqual<int>(0, numberOfBalls);
-      }
-    }
+        [TestMethod]
+        public void ConstructorTestMethod()
+        {
+            using (DataImplementation newInstance = new DataImplementation())
+            {
+                IEnumerable<IBall>? ballsList = null;
+                newInstance.CheckBallsList(x => ballsList = x);
+                Assert.IsNotNull(ballsList);
+                int numberOfBalls = 0;
+                newInstance.CheckNumberOfBalls(x => numberOfBalls = x);
+                Assert.AreEqual<int>(0, numberOfBalls);
+            }
+        }
 
-    [TestMethod]
-    public void DisposeTestMethod()
-    {
-      DataImplementation newInstance = new DataImplementation();
-      bool newInstanceDisposed = false;
-      newInstance.CheckObjectDisposed(x => newInstanceDisposed = x);
-      Assert.IsFalse(newInstanceDisposed);
-      newInstance.Dispose();
-      newInstance.CheckObjectDisposed(x => newInstanceDisposed = x);
-      Assert.IsTrue(newInstanceDisposed);
-      IEnumerable<IBall>? ballsList = null;
-      newInstance.CheckBallsList(x => ballsList = x);
-      Assert.IsNotNull(ballsList);
-      newInstance.CheckNumberOfBalls(x => Assert.AreEqual<int>(0, x));
-     }
+        [TestMethod]
+        public void DisposeTestMethod()
+        {
+            DataImplementation newInstance = new DataImplementation();
+            bool newInstanceDisposed = false;
+            newInstance.CheckObjectDisposed(x => newInstanceDisposed = x);
+            Assert.IsFalse(newInstanceDisposed);
+            newInstance.Dispose();
+            newInstance.CheckObjectDisposed(x => newInstanceDisposed = x);
+            Assert.IsTrue(newInstanceDisposed);
+            IEnumerable<IBall>? ballsList = null;
+            newInstance.CheckBallsList(x => ballsList = x);
+            Assert.IsNotNull(ballsList);
+            newInstance.CheckNumberOfBalls(x => Assert.AreEqual<int>(0, x));
+        }
 
         [TestMethod]
         public void StartTestMethod()
@@ -88,9 +88,9 @@ namespace TP.ConcurrentProgramming.Data.Test
             Assert.IsTrue(pos.y <= 400 - ball.Diameter);
         }
 
-         [TestMethod]
-          public void CreateBallAndVectorTest()
-         {
+        [TestMethod]
+        public void CreateBallAndVectorTest()
+        {
             using var data = new DataImplementation();
             var vector = data.CreateVector(5.5, -3.3);
             Assert.AreEqual(5.5, vector.x);
@@ -99,8 +99,22 @@ namespace TP.ConcurrentProgramming.Data.Test
             var ball = data.CreateBall(vector, new Vector(1, 0));
             Assert.IsNotNull(ball);
             Assert.AreEqual(vector, ((Ball)ball).Position);
-         }
-
-
         }
-  }
+
+        [TestMethod]
+        public async Task RunSimulation_ShouldMoveBall()
+        {
+            var data = new DataImplementation();
+            IVector initialPosition = new Vector(0, 0);
+            IVector velocity = new Vector(10, 0);
+            IBall testBall = data.CreateBall(initialPosition, velocity);
+            Vector beforeMove = (Vector)testBall.GetPosition();
+            data.Start(1, (pos, ball) => { });
+            await Task.Delay(200);
+            Vector afterMove = (Vector)testBall.GetPosition();
+            Assert.IsFalse(afterMove.x > beforeMove.x || afterMove.y > beforeMove.y);
+            data.Stop(); 
+        }
+
+    }
+}
